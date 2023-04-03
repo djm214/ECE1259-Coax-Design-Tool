@@ -33,7 +33,7 @@ if sig_D <= 0
     error('ERROR!!! Value of conductance is invalid');
 end
 
-mu_D = input('Permeability (\mu_{d}) of the conductor: ');
+mu_r = input('Relative permeability (\mu_{r}) of the conductor: ');
 %Error checking if mu_D < mu_free space
 if mu_D < 1
     error('ERROR!!! The value of dielectric permeability is impossible');
@@ -66,7 +66,8 @@ end
 a = innerRadius;
 b = outerRadius;
 w = 2*pi*freq;
-mu_0 = 4*pi*e-7; //may be wrong way of writing this
+mu_0 = 4*pi*10^-7;
+mu_D = mu_r*mu_0;
 
 %%subscripts may be wrong
 
