@@ -66,6 +66,7 @@ end
 a = innerRadius;
 b = outerRadius;
 w = 2*pi*freq;
+mu_0 = 4*pi*e-7; //may be wrong way of writing this
 
 %%subscripts may be wrong
 
