@@ -35,7 +35,7 @@ end
 
 mu_R = input('Relative permeability (\mu_{r}) of the conductor: ');
 %Error checking if mu_D < mu_free space
-if mu_R > 0
+if mu_R < 0
     error('ERROR!!! The value of relative permeability is impossible');
 end
 
@@ -68,12 +68,13 @@ b = outerRadius;
 w = 2*pi*freq;
 mu_0 = 4*pi*10^-7;
 mu = mu_R*mu_0;
+e_0 = 8.85e-12;
 
 %%subscripts may be wrong
 
 R = (1/(2*pi))*(1/a + 1/b)*sqrt(pi*freq*mu/sig_C);
 L = mu/(2*pi)*log(b/a);
-C = 2*pi*er/log(b/a);
+C = 2*pi*er*e_0/log(b/a);
 G = 2*pi*sig_D/log(b/a);
 
 gamma = sqrt((R + j*w*L)*(G + j*w*C)); 
