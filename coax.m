@@ -115,4 +115,4 @@ fprintf('VSWR is %d\n\n', VSWR);
 
 %fcutoff, Vbr
 fprintf('Cutoff frequency is %d Hz\n', fcutoff);
-fprintf('Zo is %d Ohms\n', Z0);
+fprintf('Vbr is %d Volts\n', Vbr);
