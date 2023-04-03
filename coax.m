@@ -33,10 +33,10 @@ if sig_D <= 0
     error('ERROR!!! Value of conductance is invalid');
 end
 
-mu_r = input('Relative permeability (\mu_{r}) of the conductor: ');
+mu_R = input('Relative permeability (\mu_{r}) of the conductor: ');
 %Error checking if mu_D < mu_free space
-if mu_D < 1
-    error('ERROR!!! The value of dielectric permeability is impossible');
+if mu_R > 0
+    error('ERROR!!! The value of relative permeability is impossible');
 end
 
 ZL = input('Impedance of the load (Z_{L}, in \Omega) of the load to be connected to the coaxial cable: ');
@@ -67,12 +67,12 @@ a = innerRadius;
 b = outerRadius;
 w = 2*pi*freq;
 mu_0 = 4*pi*10^-7;
-mu_D = mu_r*mu_0;
+mu = mu_R*mu_0;
 
 %%subscripts may be wrong
 
-R = (1/(2*pi))*(1/a + 1/b)*sqrt(pi*freq*mu_D/sig_C);
-L = mu_D/(2*pi)*log(b/a);
+R = (1/(2*pi))*(1/a + 1/b)*sqrt(pi*freq*mu/sig_C);
+L = mu/(2*pi)*log(b/a);
 C = 2*pi*er/log(b/a);
 G = 2*pi*sig_D/log(b/a);
 
