@@ -21,6 +21,12 @@ if er < 1
     error('ERROR!!! The value of er is impossible');
 end
 
+sig_C = input('Conductance (\sigma_{c}, in S/m) of the conductor: ');
+%Error checking if sig_C <= 0
+if sig_C <= 0
+    error('ERROR!!! Value of conductance is invalid');
+end
+    
 sig_D = input('Conductance (\sigma_{d}, in S/m) of the dielectric: ');
 %Error checking if sig_D <= 0
 if sig_D <= 0
@@ -33,7 +39,7 @@ if mu_D < 1
     error('ERROR!!! The value of dielectric permeability is impossible');
 end
 
-ZL = input('Impedance of the load (Z_{L}, in \Omega) of the laod to be connected to the coaxial cable: ');
+ZL = input('Impedance of the load (Z_{L}, in \Omega) of the load to be connected to the coaxial cable: ');
 %Error checking if there is a negaitive resistance
 if ZL < 0
     error('ERROR!!! Cannot have anegative resistance');
@@ -63,7 +69,7 @@ w = 2*pi*freq;
 
 %%subscripts may be wrong
 
-R = (1/(2*pi))*(1/a + 1/b)*sqrt(pi*freq*mu_D/sig_D);
+R = (1/(2*pi))*(1/a + 1/b)*sqrt(pi*freq*mu_D/sig_C);
 L = mu_D/(2*pi)*log(b/a);
 C = 2*pi*er/log(b/a);
 G = 2*pi*sig_D/log(b/a);
