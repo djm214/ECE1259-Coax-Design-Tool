@@ -257,7 +257,7 @@ fprintf('G is %d Siemens\n\n', G);
 %alpha, beta, gamma
 fprintf('Gamma is %d + j%d\n', alpha,beta);
 fprintf('Alpha is %d\n', alpha);
-fprintf('Gamma is %d\n\n', beta);
+fprintf('Beta is %d\n\n', beta);
 
 %Zo, Zin, RefCoeff, VSWR
 fprintf('Zo is %d Ohms\n', Z0);
