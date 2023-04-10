@@ -193,7 +193,7 @@ end
 ZL_R = input('Real impedance of the load (R_{L}, in \Omega) of the load to be connected to the coaxial cable: ');
 %Error checking if there is a negaitive resistance
 if ZL_R < 0
-    error('ERROR!!! Cannot have anegative resistance');
+    error('ERROR!!! Cannot have a negative resistance');
 end
 ZL_I = j*input('Imaginary impedance of the load (X_{L}, in \Omega) of the load to be connected to the coaxial cable: ');
 
@@ -280,8 +280,8 @@ fprintf('Beta is %d\n\n', beta);
 
 %Zo, Zin, RefCoeff, VSWR
 fprintf('Zo is %d + j(%d) Ohms\n', Z0,imag(Z0));
-fprintf('Zin is %d with angle %d Ohms\n', abs(Zin),(180/3.14)*phase(Zin));
-fprintf('Reflection Coefficient is %d with angle %d\n', abs(refCoeff),(180/3.14)*phase(refCoeff));
+fprintf('Zin is %d with angle %d Ohms\n', abs(Zin),(180/3.14)*angle(Zin));
+fprintf('Reflection Coefficient is %d with angle %d\n', abs(refCoeff),(180/3.14)*angle(refCoeff));
 fprintf('VSWR is %d\n\n', VSWR);
 
 %fcutoff, Vbr
