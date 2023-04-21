@@ -79,17 +79,17 @@ switch dielectricMaterial
     case 'air'
         er = 1.0005;
         Ebr = 3e6;
-        sig_D = 0;
+        sig_D = 3e-15;
     
     case 'alumina'
         er = 9.9;
-        Ebr = 0;
-        sig_D = 0;
+        Ebr = 8.3e3;
+        sig_D = 10e-14;
 
     case 'barium titanate'
         er = 1200;
         Ebr = 7.5e6;
-        sig_D = 0;
+        sig_D = 0; //Could not find
 
     case 'glass'
         er = 10;
@@ -98,8 +98,8 @@ switch dielectricMaterial
     
     case 'ice'
         er = 4.2;
-        Ebr = 0;
-        sig_D = 0;
+        Ebr = 65e6; //Could not find
+        sig_D = 10e-9;
 
     case 'mica'
         er = 5.4;
@@ -123,7 +123,7 @@ switch dielectricMaterial
     
     case 'silicon'
         er = 11.8;
-        Ebr = 0;
+        Ebr = 370;
         sig_D = 0.00044;
     
     case 'soil'
@@ -138,12 +138,12 @@ switch dielectricMaterial
     
     case 'water'
         er = 81;
-        Ebr = 0;
+        Ebr = 65e6; 
         sig_D = 0.0001;
     
     case 'seawater'
         er = 72;
-        Ebr = 0;
+        Ebr = 0; //Could not find
         sig_D = 5;
     
     otherwise
