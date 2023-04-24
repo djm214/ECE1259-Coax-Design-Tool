@@ -89,7 +89,7 @@ switch dielectricMaterial
     case 'barium titanate'
         er = 1200;
         Ebr = 7.5e6;
-        sig_D = 0; //Could not find
+        sig_D = 0; %//Could not find
 
     case 'glass'
         er = 10;
@@ -98,7 +98,7 @@ switch dielectricMaterial
     
     case 'ice'
         er = 4.2;
-        Ebr = 65e6; //Could not find
+        Ebr = 65e6; %//Could not find
         sig_D = 10e-9;
 
     case 'mica'
@@ -143,7 +143,7 @@ switch dielectricMaterial
     
     case 'seawater'
         er = 72;
-        Ebr = 0; //Could not find
+        Ebr = 0; %//Could not find
         sig_D = 5;
     
     otherwise
